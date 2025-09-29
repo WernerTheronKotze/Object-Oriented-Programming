@@ -76,6 +76,10 @@ def view_all():
 # lowest quantity, which is the shoes that need to be
 # restocked
 def re_stock():
+    if not shoes:
+        print("No shoes data available. Please read shoes data first.")
+        return
+    
     lowest_quantity = shoes[0]
     # iterate through the list
     for shoe in shoes:
@@ -120,6 +124,10 @@ def value_per_item():
 # determine the product with the highest quantity
 # print this shoe as being for sale
 def highest_qty():
+    if not shoes:
+        print("No shoes data available. Please read shoes data first.")
+        return
+    
     highest_quantity_shoe = shoes[0]
     # iterate through the list
     for shoe in shoes:
