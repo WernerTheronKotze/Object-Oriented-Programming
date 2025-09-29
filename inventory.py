@@ -18,7 +18,7 @@ class Shoes:
     '''
     @:return the quantity of the shoes
     '''
-    def get_quanty(self):
+    def get_quantity(self):
         return self.quantity
 
     '''
@@ -80,7 +80,7 @@ def re_stock():
     # iterate through the list
     for shoe in shoes:
         # check if quantity is lowest
-        if shoe.get_quanty() < lowest_quantity.get_quanty():
+        if shoe.get_quantity() < lowest_quantity.get_quantity():
             lowest_quantity = shoe
 
     print("Lowest Quantity Details\n"+str(lowest_quantity))
@@ -90,7 +90,7 @@ def re_stock():
     need_restock = input("Do you want to add to quantity of shoes(yes/no)? ")
     if need_restock.lower() == "yes":
         quantity_to_update = int(input("Enter quantity to update: "))
-        lowest_quantity.quantity = lowest_quantity.get_quanty() + quantity_to_update
+        lowest_quantity.quantity = lowest_quantity.get_quantity() + quantity_to_update
     else:
         print("You selected no need to restock")
 
@@ -110,7 +110,7 @@ def value_per_item():
     value = 0
     # iterate through the list
     for shoe in shoes:
-        value = shoe.get_cost() * shoe.get_quanty()
+        value = shoe.get_cost() * shoe.get_quantity()
 
         print(str(shoe) +"\tValue: " + str(value))
 
@@ -124,7 +124,7 @@ def highest_qty():
     # iterate through the list
     for shoe in shoes:
         # check if quantity is highest
-        if shoe.get_quanty() > highest_quantity_shoe.get_quanty():
+        if shoe.get_quantity() > highest_quantity_shoe.get_quantity():
             highest_quantity_shoe = shoe
 
     print(str(highest_quantity_shoe))
